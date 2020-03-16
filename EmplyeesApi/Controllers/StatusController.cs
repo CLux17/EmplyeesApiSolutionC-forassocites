@@ -24,6 +24,12 @@ namespace EmplyeesApi.Controllers
         {
             return Ok($"Getting you the blog posts for: {month}/{day}/{year}");
         }
+
+        [HttpGet("/tickets")]
+        public ActionResult GetTickets([FromQuery] string status = "all")
+        {
+            return Ok($"Getting you the {status} tickets...");
+        }
     }
 
     public class StatusResponse
