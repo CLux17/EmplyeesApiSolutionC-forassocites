@@ -30,7 +30,22 @@ namespace EmplyeesApi.Controllers
         {
             return Ok($"Getting you the {status} tickets...");
         }
+
+        [HttpPost("/status")]
+        public ActionResult SetStatus([FromBody] StatusRequest request)
+        {
+
+            return Ok(request);
+        }
     }
+
+
+    public class StatusRequest
+    {
+        public string Status { get; set; }
+        public string SetBy { get; set; }
+    }
+
 
     public class StatusResponse
     {
